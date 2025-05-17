@@ -24,12 +24,11 @@ function login(email, password) {
     .then(res => res.json().then(data => ({ status: res.status, data })))
     .then(result => {
         if (result.status === 200) {
-            console.log(result.data);
             alertType = 'success';
             message = 'Inicio de sesión exitoso.';
             localStorage.setItem('token', result.data.token);
             setTimeout(() =>{
-                location.href = 'admin/dashboard.html'
+                location.href = '/admin/dashboard.html'
             }, 2000)// 2000 ms = 2 segundos
         } else {
             alertType = 'danger';
