@@ -21,16 +21,16 @@ function login(email, password) {
             email, password
         }) 
     })
-    .then(response => { 
-        return response.json().then(data => {
-            return { status: response.status, data: data };
-        })
-
-    })
+    .then(res => res.json().then(data => ({ status: res.status, data })))
     .then(result => {
         if (result.status === 200) {
+            console.log(result.data);
             alertType = 'success';
             message = 'Inicio de sesión exitoso.';
+            localStorage.setItem('token', result.data.token);
+            setTimeout(() =>{
+                location.href = 'admin/dashboard.html'
+            }, 2000)// 2000 ms = 2 segundos
         } else {
             alertType = 'danger';
             message = 'Usuario o contraseña incorrectos.';
