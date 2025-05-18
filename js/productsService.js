@@ -1,4 +1,4 @@
-    document.querySelector('#productos').addEventListener('click', () => productos('1'));
+document.querySelector('#productos').addEventListener('click', () => productos('1'));
 
 function productos(page) {
     document.getElementById('cardHeader').innerHTML = '<h5>Listado de productos</h5>'
