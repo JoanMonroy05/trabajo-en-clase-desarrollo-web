@@ -1,7 +1,7 @@
 document.querySelector('#productos').addEventListener('click', () => productos('1'));
 
 function productos(page) {
-    document.getElementById('cardHeader').innerHTML = '<h5>Listado de productos</h5>'
+    document.getElementById('cardHeader').innerHTML = '<h5><i class="fa-solid fa-box-open"></i> Listado de productos</h5>'
     const URL = 'https://reqres.in/api/products?page=' + page;
     fetch(URL, {
         method: 'GET',

@@ -1,7 +1,7 @@
 document.querySelector('#banderas').addEventListener('click', () => banderas());
 
 function banderas() {
-    document.getElementById('cardHeader').innerHTML = '<h5>Listado de banderas</h5>'
+    document.getElementById('cardHeader').innerHTML = '<h5><i class="fa-solid fa-flag"></i> Listado de banderas</h5>'
     const URL = 'https://restcountries.com/v3.1/all';
     fetch(URL)
     .then(res => res.json().then(data => ({status: res.status, data})))
